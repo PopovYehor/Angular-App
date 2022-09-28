@@ -1,5 +1,4 @@
-import { Observable } from 'rxjs';
-import { Component, OnInit, ViewChild, ElementRef, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { CurrencyRateService } from './../currency-rate.service';
 import { Selected } from '../interface/interfase';
 
