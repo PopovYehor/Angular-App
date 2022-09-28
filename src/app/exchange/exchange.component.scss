@@ -1,0 +1,59 @@
+.exchange-wrap{
+    width: 100%;
+    height: 94%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .exchange-container{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-basis: 1200px;
+        height: 60%;
+        background-color: rgb(209, 226, 241);
+        border-radius: 20px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        gap: 20px;
+        margin: 0 10px;
+        .exchange-item-wrap{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-basis: 400px;
+            height: 50%;
+            background-color: rgb(229, 236, 243);
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            margin: 0 10px;
+            .exchange-item-input, .exchange-item-select{
+                width: 50%;
+                height: 15%;
+                border: 1.5px solid rgb(209, 209, 209);
+                border-radius: 5px;
+                padding: 10px;
+                margin-left: 20px;
+                background-color: transparent;
+
+                font-family: "Gill Sans", sans-serif;
+                font-size: 19px;
+                &:focus{
+                    outline: 2px solid rgba(143, 186, 236, 0.527);
+                    box-shadow: rgba(143, 186, 236, 0.527) 0px 4px 12px;
+                }
+            }
+            .exchange-item-select{
+                width: auto;
+                height: 15%;
+                padding: 5px;
+                margin-left: 0;
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 574px) {
+    .exchange-item-select{
+        padding: 0 !important;
+    }
+}
