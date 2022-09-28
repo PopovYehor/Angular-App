@@ -14,7 +14,7 @@ export class CurrencyRateService {
   toEUR: number = 0
 
   first: number = 1000
-  second: number = 0
+  second: number = 1
 
   getRateTo(base: string){
     return fetch(this.rateUrl+base).then(res=>res.json()).then(res=>{
@@ -23,7 +23,7 @@ export class CurrencyRateService {
   }
   getSelectRate(base: string, value: string, flag? : boolean){
     return fetch(this.rateUrl+base).then(res=>res.json()).then(res=>{
-      !flag ? this.second =  Number((this.first * res.rates[value]).toFixed(2)) : this.first = Number((this.second * res.rates[value]).toFixed(2))
+      !flag ? this.first =  Number((this.second * res.rates[value]).toFixed(2)) : this.second = Number((this.first * res.rates[value]).toFixed(2))
     })
   }
 }
