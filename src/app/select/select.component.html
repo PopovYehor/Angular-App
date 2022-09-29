@@ -1,0 +1,3 @@
+<select #Select class="exchange-item-select" id = "{{defaulSelectItem}}-select" (change)="getValue(Select.value)">
+    <option #Option *ngFor = "let select of SelectOption" id = "{{defaulSelectItem}}-option"  value="{{select.name}}"[selected]="defaulSelectItem == select.name">{{select.name}}</option>
+</select>

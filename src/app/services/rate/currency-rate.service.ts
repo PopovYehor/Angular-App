@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ConfigRates, Count } from 'src/app/interface/interfase';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,17 +14,22 @@ export class CurrencyRateService {
   toUSD: number = 0
   toEUR: number = 0
 
+  count: Count = {
+    first:  1000,
+    second: 1
+  }
   first: number = 1000
   second: number = 1
-
   getRateTo(base: string){
-    return fetch(this.rateUrl+base).then(res=>res.json()).then(res=>{
-      base == 'USD' ? this.toUSD = res.rates.UAH : this.toEUR = res.rates.UAH
-    })
+    this.http.get<ConfigRates>(this.rateUrl+base).subscribe(data =>{
+      base == 'USD' ? this.toUSD = data.rates.UAH : this.toEUR = data.rates.UAH
+      })
   }
+  
   getSelectRate(base: string, value: string, flag? : boolean){
-    return fetch(this.rateUrl+base).then(res=>res.json()).then(res=>{
-      !flag ? this.first =  Number((this.second * res.rates[value]).toFixed(2)) : this.second = Number((this.first * res.rates[value]).toFixed(2))
+    this.http.get<ConfigRates>(this.rateUrl+base).subscribe(data =>{
+      !flag ? this.count.first =  Number((this.count.second * data.rates[value]).toFixed(2)) 
+      : this.count.second = Number((this.count.first * data.rates[value]).toFixed(2))
     })
   }
 }

@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HeaderComponent } from './header/header.component';
 import { ExchangeComponent } from './exchange/exchange.component';
+import { InputComponent } from './input/input.component';
+import { SelectComponent } from './select/select.component';
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import { ExchangeComponent } from './exchange/exchange.component';
     AppComponent,
     HeaderComponent,
     ExchangeComponent,
+    InputComponent,
+    SelectComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,7 @@ import { ExchangeComponent } from './exchange/exchange.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [SelectComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

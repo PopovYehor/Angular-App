@@ -1,17 +1,13 @@
 <div class="exchange-wrap">
     <main class="exchange-container">
         <section class="exchange-item-wrap" id="first-item">
-            <input #firstInput class="exchange-item-input" id = "first-input" value="{{Rate.first}}"  placeholder="Enter the amount of money" (input) = "getInputValue(firstInput.value)">
-            <select #firstSelect class="exchange-item-select" id = 'first-select' (change)="getValueSelect(firstSelect.value)">
-                <option #firstOption *ngFor = "let select of SelectOption" value="{{select.name}}" [selected]="SelectItem.first == select.name">{{select.name}}</option>
-            </select>
+            <app-input [values]="Rate.count.first" (getValues)="getInputValue($event)"></app-input>
+            <app-select [defaulSelectItem]="'UAH'" (getValues)="getValueSelect($event)"></app-select>
         </section>
         
         <section class="exchange-item-wrap" id="second-item">
-            <input #secondInput class="exchange-item-input" id = "second-input" value="{{Rate.second}}" placeholder="Enter the amount of money" (input) = "getInputValue(secondInput.value, true)">
-            <select #secondSelect class="exchange-item-select" id = 'second-select' (change)="getValueSelect(secondSelect.value, true)">
-                <option #secondOption *ngFor = "let select of SelectOption" value="{{select.name}}"[selected]="SelectItem.second == select.name">{{select.name}}</option>
-            </select>
+            <app-input [values]="Rate.count.second" (getValues)="getInputValue($event, true)"></app-input>
+            <app-select [defaulSelectItem]="'USD'" (getValues)="getValueSelect($event, true)"></app-select>
         </section>
     </main>
 </div>

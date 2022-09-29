@@ -17,7 +17,7 @@
         .actual-courses-title{
             font-weight: 600;
             font-size: 17px;
-            margin-right: 50px;
+            margin: 0 50px 0 10px;
         }
         .actual-courses-currency{
             display: flex;
@@ -51,5 +51,11 @@
             transition: all 500ms;
         }
         
+    }
+}
+
+@media screen and (max-width: 574px) {
+    .header{
+        height: 8%;
     }
 }

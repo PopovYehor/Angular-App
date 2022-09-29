@@ -25,35 +25,16 @@
             border-radius: 20px;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
             margin: 0 10px;
-            .exchange-item-input, .exchange-item-select{
-                width: 50%;
-                height: 15%;
-                border: 1.5px solid rgb(209, 209, 209);
-                border-radius: 5px;
-                padding: 10px;
-                margin-left: 20px;
-                background-color: transparent;
-
-                font-family: "Gill Sans", sans-serif;
-                font-size: 19px;
-                &:focus{
-                    outline: 2px solid rgba(143, 186, 236, 0.527);
-                    box-shadow: rgba(143, 186, 236, 0.527) 0px 4px 12px;
-                }
-            }
-            .exchange-item-select{
-                width: auto;
-                height: 15%;
-                padding: 5px;
-                margin-left: 0;
-                margin-right: 20px;
-            }
+            gap: 10px;
         }
     }
 }
 
 @media screen and (max-width: 574px) {
-    .exchange-item-select{
-        padding: 0 !important;
+    .exchange-wrap{
+        height: 92%;
+        .exchange-item-wrap{
+            flex-direction: column;
+        }
     }
 }
