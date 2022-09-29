@@ -29,7 +29,8 @@ export class ExchangeComponent implements OnInit {
   }
 
   setRate(item: string, valueCount: string, valueGetSelect: string, selectItem: string, rate: boolean, flag? : boolean){
-    rate ? this.Rate.count[item as keyof Count] = Number(valueCount) : this.SelectItems[item as keyof Selected] = valueCount
+    rate ? this.Rate.count[item as keyof Count] = Number(valueCount) 
+    : this.SelectItems[item as keyof Selected] = valueCount
     this.Rate.getSelectRate(valueGetSelect, this.SelectItems[selectItem as keyof Selected],flag)
   }
 

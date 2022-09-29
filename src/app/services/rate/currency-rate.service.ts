@@ -11,18 +11,19 @@ export class CurrencyRateService {
   key = 'N5RENxgcnWtJnwVfQRDRGYdpej7qkgJE'
   rateUrl: string = `https://api.exchangerate.host/latest?access_key=${this.key}&base=`
 
-  toUSD: number = 0
-  toEUR: number = 0
+  rateNow: Count ={
+    first:  0,
+    second: 0
+  }
 
   count: Count = {
     first:  1000,
     second: 1
   }
-  first: number = 1000
-  second: number = 1
+
   getRateTo(base: string){
     this.http.get<ConfigRates>(this.rateUrl+base).subscribe(data =>{
-      base == 'USD' ? this.toUSD = data.rates.UAH : this.toEUR = data.rates.UAH
+      base == 'EUR' ? this.rateNow.first = data.rates.UAH : this.rateNow.second = data.rates.UAH
       })
   }
   
