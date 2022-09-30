@@ -12,20 +12,12 @@ export class ExchangeComponent implements OnInit {
   constructor(public Rate : CurrencyRateService, public Select: SelectComponent) { }
 
   SelectItems: Selected = {
-    first: '',
-    second: ''
-  }
-
-  setSelectItem(i: number){
-   return document.querySelectorAll('select')[i].id.replace('-select', '')
+    first: 'UAH',
+    second: 'USD'
   }
   
   ngOnInit(): void {
-    setTimeout(()=>{
-      this.SelectItems.first = this.setSelectItem(0)
-      this.SelectItems.second = this.setSelectItem(1)
-      this.Rate.getSelectRate(this.SelectItems.first, this.SelectItems.second, true)
-    }, 0)
+    this.Rate.getSelectRate(this.SelectItems.first, this.SelectItems.second, true)
   }
 
   setRate(item: string, valueCount: string, valueGetSelect: string, selectItem: string, rate: boolean, flag? : boolean){
