@@ -1,3 +1,4 @@
+
 .header{
     display: flex;
     align-items: center;
@@ -14,6 +15,9 @@
         flex-basis: 1200px;
         height: 100%;
         position: relative;
+        .material-icons{
+            font-size: 22px;
+        }
         .actual-courses-title{
             font-weight: 600;
             font-size: 17px;
@@ -24,7 +28,7 @@
             align-items: center;
             justify-content: center;
             height: 100%;
-            font-size: 16px;
+            font-size: 20px;
             font-weight: 600;
             position: relative;
             padding: 0 10px;
@@ -57,5 +61,18 @@
 @media screen and (max-width: 574px) {
     .header{
         height: 8%;
+        .actual-courses-title{
+            max-width: 210px;
+            margin: 0 0 0 10px !important;
+            font-size: 15px !important;
+        }
+        .material-icons{
+            margin-top: 3px;
+            font-size: 20px !important;
+        }
+        .actual-courses-currency{
+            margin: 0 !important;
+            font-size: 18px !important;
+        }
     }
 }

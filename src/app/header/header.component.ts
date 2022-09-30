@@ -1,6 +1,7 @@
 import { CurrencyRateService } from '../services/rate/currency-rate.service';
 import { Component, OnInit } from '@angular/core';
-
+import { forkJoin} from 'rxjs';
+import { IRequestRate } from '../interface/interfase';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public Rate: CurrencyRateService) { }
-
+  constructor(public Rate: CurrencyRateService) {}
+  
   ngOnInit(): void {
-    Promise<number>.all([this.Rate.getRateTo('USD'), this.Rate.getRateTo('EUR')])
+    forkJoin<IRequestRate>({
+      USD: this.Rate.getRateTo('USD'),
+      EUR: this.Rate.getRateTo('EUR')
+    })
   }
 }

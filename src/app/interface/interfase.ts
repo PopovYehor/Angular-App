@@ -17,3 +17,9 @@ export interface ConfigRates {
     rates: any,
     success: boolean
 }
+
+export interface IRequestRate{
+    [x: string]: any;
+    USD: void,
+    EUR: void
+}

@@ -1,13 +1,13 @@
 <div class="exchange-wrap">
     <main class="exchange-container">
         <section class="exchange-item-wrap" id="first-item">
-            <app-input [values]="Rate.count.first" (getValues)="getInputValue($event)"></app-input>
-            <app-select [defaulSelectItem]="SelectItems.first" (getValues)="getValueSelect($event)"></app-select>
+            <app-input class="input-wrap"  [values]="Rate.count.first" (getValues)="getInputValue($event)"></app-input>
+            <app-select class="select-wrap" [defaulSelectItem]="SelectItems.first" (getValues)="getValueSelect($event)"></app-select>
         </section>
-        
+        <mat-icon class="swap-icon">swap_horiz</mat-icon>
         <section class="exchange-item-wrap" id="second-item">
-            <app-input [values]="Rate.count.second" (getValues)="getInputValue($event, true)"></app-input>
-            <app-select [defaulSelectItem]="SelectItems.second" (getValues)="getValueSelect($event, true)"></app-select>
+            <app-input class="input-wrap"   [values]="Rate.count.second" (getValues)="getInputValue($event, true)"></app-input>
+            <app-select class="select-wrap" [defaulSelectItem]="SelectItems.second" (getValues)="getValueSelect($event, true)"></app-select>
         </section>
     </main>
 </div>

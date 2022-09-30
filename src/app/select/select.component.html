@@ -1,3 +1,6 @@
-<select #Select class="exchange-item-select" id = "{{defaulSelectItem}}-select" (change)="getValue(Select.value)">
-    <option #Option *ngFor = "let select of SelectOption" id = "{{defaulSelectItem}}-option"  value="{{select.name}}"[selected]="defaulSelectItem == select.name">{{select.name}}</option>
-</select>
+<mat-form-field appearance="fill" class="select-container">
+    <mat-label>Select currency</mat-label>
+    <mat-select #Select (change)="getValue(Select.value)" [(value)]="defaulSelectItem" (selectionChange)="getValue(Select.value)">
+        <mat-option *ngFor = "let select of SelectOption" value="{{select.name}}">{{select.name}}</mat-option>
+    </mat-select>
+</mat-form-field>
